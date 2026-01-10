@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Ardito-Advisors-Solutions/static/css/main.6ac315d6.css",
+    "main.js": "/Ardito-Advisors-Solutions/static/js/main.557d3628.js",
+    "index.html": "/Ardito-Advisors-Solutions/index.html",
+    "main.6ac315d6.css.map": "/Ardito-Advisors-Solutions/static/css/main.6ac315d6.css.map",
+    "main.557d3628.js.map": "/Ardito-Advisors-Solutions/static/js/main.557d3628.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ac315d6.css",
+    "static/js/main.557d3628.js"
+  ]
+}
