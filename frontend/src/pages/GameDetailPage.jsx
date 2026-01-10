@@ -106,7 +106,7 @@ const GameDetailPage = () => {
     return (
       <div className="text-center py-12">
         <h2 className="text-xl font-bold mb-2">Game not found</h2>
-        <Link to="/live-games">
+        <Link to="/app/live-games">
           <Button variant="outline">Back to Live Games</Button>
         </Link>
       </div>
@@ -117,7 +117,7 @@ const GameDetailPage = () => {
     <div className="space-y-6" data-testid="game-detail-page">
       {/* Header */}
       <div className="flex items-center gap-4">
-        <Link to="/live-games">
+        <Link to="/app/live-games">
           <Button variant="ghost" size="icon">
             <ArrowLeft className="h-5 w-5" />
           </Button>

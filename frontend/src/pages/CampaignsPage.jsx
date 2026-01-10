@@ -237,7 +237,7 @@ const CampaignsPage = () => {
             Create and manage emotion-triggered sponsor campaigns
           </p>
         </div>
-        <Link to="/campaigns/create">
+        <Link to="/app/campaigns/create">
           <Button className="bg-ardito-blue hover:bg-blue-600" data-testid="create-campaign-btn">
             <Plus className="mr-2 h-4 w-4" />
             Create Campaign
@@ -286,7 +286,7 @@ const CampaignsPage = () => {
             <p className="text-muted-foreground mb-6 max-w-md mx-auto">
               Create your first campaign to start activating sponsors at emotional peaks
             </p>
-            <Link to="/campaigns/create">
+            <Link to="/app/campaigns/create">
               <Button className="bg-ardito-blue hover:bg-blue-600">
                 <Plus className="mr-2 h-4 w-4" />
                 Create Campaign
