@@ -70,7 +70,7 @@ const CampaignRow = ({ campaign, onStatusChange, onDelete }) => {
       <td className="py-4 px-4">
         <div>
           <Link
-            to={`/campaigns/${campaign.id}/analytics`}
+            to={`/app/campaigns/${campaign.id}/analytics`}
             className="font-medium hover:text-ardito-blue transition-colors"
           >
             {campaign.name}

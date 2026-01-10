@@ -642,7 +642,7 @@ const CreateCampaignPage = () => {
       <div className="mb-8">
         <Button
           variant="ghost"
-          onClick={() => navigate("/campaigns")}
+          onClick={() => navigate("/app/campaigns")}
           className="mb-4"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
