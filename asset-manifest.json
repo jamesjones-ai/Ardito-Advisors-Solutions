@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Ardito-Advisors-Solutions/static/css/main.6ac315d6.css",
-    "main.js": "/Ardito-Advisors-Solutions/static/js/main.fab2886c.js",
+    "main.js": "/Ardito-Advisors-Solutions/static/js/main.6f1fc08a.js",
     "index.html": "/Ardito-Advisors-Solutions/index.html",
     "main.6ac315d6.css.map": "/Ardito-Advisors-Solutions/static/css/main.6ac315d6.css.map",
-    "main.fab2886c.js.map": "/Ardito-Advisors-Solutions/static/js/main.fab2886c.js.map"
+    "main.6f1fc08a.js.map": "/Ardito-Advisors-Solutions/static/js/main.6f1fc08a.js.map"
   },
   "entrypoints": [
     "static/css/main.6ac315d6.css",
-    "static/js/main.fab2886c.js"
+    "static/js/main.6f1fc08a.js"
   ]
 }
