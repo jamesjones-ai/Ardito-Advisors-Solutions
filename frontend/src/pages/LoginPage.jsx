@@ -67,7 +67,7 @@ const LoginPage = () => {
           {/* Logo */}
           <div className="mb-8">
             <img 
-              src="https://customer-assets.emergentagent.com/job_fan-pulse/artifacts/hhzulj1x_Ardito%20Advisors%20-up%20PNG%20medium%20%281%29.png" 
+              src="https://customer-assets.emergentagent.com/job_fan-pulse/artifacts/h7eqeolp_ardito_logo_offwhite.png" 
               alt="Ardito" 
               className="h-12 w-auto mb-2"
             />

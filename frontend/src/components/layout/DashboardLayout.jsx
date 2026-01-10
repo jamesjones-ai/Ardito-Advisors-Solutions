@@ -123,7 +123,7 @@ const MobileNav = () => {
       <SheetContent side="left" className="w-64 bg-ardito-surface border-white/10 p-0">
         <div className="flex items-center justify-between p-4 border-b border-white/10">
           <img 
-            src="https://customer-assets.emergentagent.com/job_fan-pulse/artifacts/hhzulj1x_Ardito%20Advisors%20-up%20PNG%20medium%20%281%29.png" 
+            src="https://customer-assets.emergentagent.com/job_fan-pulse/artifacts/h7eqeolp_ardito_logo_offwhite.png" 
             alt="Ardito" 
             className="h-7 w-auto"
           />
@@ -166,7 +166,7 @@ const TopBar = () => {
         <MobileNav />
         <NavLink to="/dashboard" className="flex items-center gap-2">
           <img 
-            src="https://customer-assets.emergentagent.com/job_fan-pulse/artifacts/hhzulj1x_Ardito%20Advisors%20-up%20PNG%20medium%20%281%29.png" 
+            src="https://customer-assets.emergentagent.com/job_fan-pulse/artifacts/h7eqeolp_ardito_logo_offwhite.png" 
             alt="Ardito" 
             className="h-8 w-auto"
           />
