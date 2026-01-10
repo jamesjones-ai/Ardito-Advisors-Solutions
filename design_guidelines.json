@@ -1,0 +1,161 @@
+{
+  "project_name": "Ardito Emotion Intelligence Platform (EIP)",
+  "design_philosophy": {
+    "identity": "The Digital Stadium",
+    "core_concept": "High-performance control room. Dark, precise, electric.",
+    "principles": [
+      "Data is the Hero: Charts and metrics take precedence over decoration.",
+      "Electric Contrast: Use neon accents (Blue/Green/Orange) against Deep Charcoal to guide attention.",
+      "Real-time Pulse: The UI should feel alive. Use subtle pulses for live data.",
+      "Density with Breath: High density for data, high breathing room for decisions."
+    ]
+  },
+  "typography": {
+    "font_family": {
+      "headings": "\"Chivo\", sans-serif",
+      "body": "\"Manrope\", sans-serif",
+      "mono": "\"JetBrains Mono\", monospace"
+    },
+    "installation": {
+      "google_fonts_link": "<link href=\"https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
+    },
+    "usage_rules": [
+      "Headings (H1-H3): Chivo Black or Bold. Tight tracking (-0.02em). Uppercase for labels.",
+      "Body: Manrope. High legibility.",
+      "Data/Numbers: JetBrains Mono. Tabular nums for live counters."
+    ]
+  },
+  "colors": {
+    "palette": {
+      "primary": {
+        "name": "Electric Blue",
+        "hex": "#0066FF",
+        "tailwind_var": "--primary",
+        "usage": "Primary actions, active states, key metrics"
+      },
+      "secondary": {
+        "name": "Vibrant Green",
+        "hex": "#00FF66",
+        "tailwind_var": "--secondary",
+        "usage": "Success states, positive trends, 'Live' indicators"
+      },
+      "accent": {
+        "name": "Stadium Orange",
+        "hex": "#FF6B00",
+        "tailwind_var": "--accent",
+        "usage": "Alerts, heatmaps, high-intensity zones"
+      },
+      "background": {
+        "name": "Deep Charcoal",
+        "hex": "#1A1A1A",
+        "tailwind_var": "--background",
+        "usage": "App background"
+      },
+      "surface": {
+        "name": "Off-Charcoal",
+        "hex": "#252525",
+        "tailwind_var": "--card",
+        "usage": "Cards, sidebars, panels"
+      },
+      "text": {
+        "main": "#F5F5F5",
+        "muted": "#A3A3A3"
+      }
+    },
+    "tailwind_config_extension": {
+      "colors": {
+        "ardito-blue": "#0066FF",
+        "ardito-green": "#00FF66",
+        "ardito-orange": "#FF6B00",
+        "ardito-charcoal": "#1A1A1A",
+        "ardito-surface": "#252525"
+      }
+    }
+  },
+  "layout_strategies": {
+    "dashboard": {
+      "grid_type": "Control Room Grid",
+      "structure": "grid grid-cols-12 gap-4 p-6",
+      "rules": [
+        "Top Rail: Live Global Stats (Score, Active Campaigns). Height: fixed.",
+        "Main Stage: Central visualization (Live Game Monitor). Col-span-8.",
+        "Side Panel: Feed/Alerts. Col-span-4.",
+        "Bottom Deck: Detailed tables/lists."
+      ]
+    },
+    "campaign_wizard": {
+      "type": "Tunnel Vision",
+      "structure": "max-w-4xl mx-auto py-12",
+      "rules": [
+        "Remove sidebar navigation during wizard flow.",
+        "Step indicator must be prominent and clickable.",
+        "Split screen: Left side inputs, Right side 'Live Preview' of the campaign."
+      ]
+    }
+  },
+  "components": {
+    "cards": {
+      "style": "Flat, sharp or minimal radius (rounded-md).",
+      "border": "1px solid rgba(255,255,255,0.1)",
+      "background": "#252525",
+      "hover": "border-ardito-blue/50 transition-colors duration-300"
+    },
+    "buttons": {
+      "primary": "bg-ardito-blue text-white font-bold uppercase tracking-wide rounded-sm hover:bg-blue-600 shadow-[0_0_15px_rgba(0,102,255,0.3)]",
+      "secondary": "border border-white/20 text-white hover:bg-white/10 rounded-sm"
+    },
+    "charts": {
+      "library": "Recharts",
+      "theme": "Dark Mode",
+      "grid": "stroke-white/5",
+      "tooltip": "bg-ardito-surface border-white/10 text-white"
+    }
+  },
+  "visual_assets": {
+    "images": [
+      {
+        "category": "Login Background",
+        "url": "https://images.unsplash.com/photo-1763854413165-1713bc5a7f4a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwxfHxzdGFkaXVtJTIwY3Jvd2QlMjBuaWdodCUyMGF0bW9zcGhlcmV8ZW58MHx8fHwxNzY4MDE0MjgxfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Stadium crowd at night, atmospheric, dark."
+      },
+      {
+        "category": "Success/Victory",
+        "url": "https://images.unsplash.com/photo-1555895105-6022ff2328cf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwxfHxhdGhsZXRlJTIwY2VsZWJyYXRpbmclMjB2aWN0b3J5JTIwZW1vdGlvbmFsfGVufDB8fHx8MTc2ODAxNDI4Mnww&ixlib=rb-4.1.0&q=85",
+        "description": "Athlete celebrating, high emotion."
+      },
+      {
+        "category": "Action/Dynamic",
+        "url": "https://images.unsplash.com/photo-1603212148535-3cba3dbd0de1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHw0fHxzb2NjZXIlMjBtYXRjaCUyMGFjdGlvbiUyMGR5bmFtaWN8ZW58MHx8fHwxNzY4MDE0Mjg0fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Soccer match action, green field contrast."
+      }
+    ],
+    "icons": "Lucide React (default). Use thin strokes (1.5px) for elegance."
+  },
+  "universal_guidelines": {
+    "do_not": [
+      "DO NOT use gradients for text.",
+      "DO NOT use rounded-xl or rounded-2xl. Keep it technical (rounded-md or rounded-sm).",
+      "DO NOT use pure black (#000000). Use #1A1A1A.",
+      "DO NOT center text in data tables. Align numbers right, text left."
+    ],
+    "must_do": [
+      "MUST use 'data-testid' on all interactive elements.",
+      "MUST use 'sonner' for toasts.",
+      "MUST implement a 'Live' indicator (pulsing green dot) for real-time screens.",
+      "MUST use Skeleton loaders for data fetching states."
+    ]
+  },
+  "instructions_to_main_agent": {
+    "setup_steps": [
+      "1. Install fonts via Google Fonts in index.html.",
+      "2. Update tailwind.config.js with the Ardito color palette.",
+      "3. Set global CSS variables in index.css to match the Dark Mode palette by default.",
+      "4. Install 'framer-motion' for smooth layout transitions (yarn add framer-motion).",
+      "5. Create the Layout wrapper with the Sidebar and Topbar."
+    ],
+    "file_handling": {
+      "css": "Use Tailwind classes primarily. Use App.css only for complex animations.",
+      "components": "Customize Shadcn components in /components/ui to match the 'Cards' and 'Buttons' specs defined above."
+    }
+  }
+}
