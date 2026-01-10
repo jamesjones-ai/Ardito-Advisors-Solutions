@@ -66,9 +66,11 @@ const LoginPage = () => {
         >
           {/* Logo */}
           <div className="mb-8">
-            <h1 className="font-heading font-black text-4xl tracking-tight">
-              <span className="text-ardito-blue">ARDITO</span>
-            </h1>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_fan-pulse/artifacts/hhzulj1x_Ardito%20Advisors%20-up%20PNG%20medium%20%281%29.png" 
+              alt="Ardito" 
+              className="h-12 w-auto mb-2"
+            />
             <p className="text-muted-foreground text-sm mt-1">Emotion Intelligence Platform</p>
           </div>
 

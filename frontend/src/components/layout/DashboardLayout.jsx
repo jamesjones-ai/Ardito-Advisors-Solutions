@@ -122,7 +122,11 @@ const MobileNav = () => {
       </SheetTrigger>
       <SheetContent side="left" className="w-64 bg-ardito-surface border-white/10 p-0">
         <div className="flex items-center justify-between p-4 border-b border-white/10">
-          <span className="font-heading font-bold text-xl text-ardito-blue">ARDITO</span>
+          <img 
+            src="https://customer-assets.emergentagent.com/job_fan-pulse/artifacts/hhzulj1x_Ardito%20Advisors%20-up%20PNG%20medium%20%281%29.png" 
+            alt="Ardito" 
+            className="h-7 w-auto"
+          />
           <Button variant="ghost" size="icon" onClick={() => setOpen(false)}>
             <X className="h-4 w-4" />
           </Button>
@@ -161,10 +165,12 @@ const TopBar = () => {
       <div className="flex items-center gap-4">
         <MobileNav />
         <NavLink to="/dashboard" className="flex items-center gap-2">
-          <span className="font-heading font-black text-2xl tracking-tight">
-            <span className="text-ardito-blue">ARDITO</span>
-            <span className="text-muted-foreground text-sm font-normal ml-2 hidden sm:inline">EIP</span>
-          </span>
+          <img 
+            src="https://customer-assets.emergentagent.com/job_fan-pulse/artifacts/hhzulj1x_Ardito%20Advisors%20-up%20PNG%20medium%20%281%29.png" 
+            alt="Ardito" 
+            className="h-8 w-auto"
+          />
+          <span className="text-muted-foreground text-sm font-normal hidden sm:inline">EIP</span>
         </NavLink>
       </div>
 
