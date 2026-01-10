@@ -58,13 +58,19 @@ module.exports = {
                     '4': 'hsl(var(--chart-4))',
                     '5': 'hsl(var(--chart-5))'
                 },
-                // Ardito Custom Colors
+                // Ardito Custom Colors - Enterprise Design System
                 ardito: {
-                    blue: '#0066FF',
-                    green: '#00FF66',
-                    orange: '#FF6B00',
-                    charcoal: '#1A1A1A',
-                    surface: '#252525',
+                    // Primary brand colors (more sophisticated)
+                    blue: '#3B82F6',
+                    green: '#10B981',
+                    orange: '#F59E0B',
+                    // Background system (Deep Night)
+                    charcoal: '#02040A',
+                    surface: '#0B0D14',
+                    'surface-highlight': '#161922',
+                    // Legacy support
+                    'neon-green': '#00FF66',
+                    'neon-blue': '#0066FF',
                 }
             },
             keyframes: {
