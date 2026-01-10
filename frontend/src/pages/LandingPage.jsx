@@ -351,43 +351,43 @@ const EmotionalPeaksViz = () => {
 // Visualization 3: Prove ROI - Attribution dashboard
 const ProveROIViz = () => {
   return (
-    <div className="bg-ardito-surface border border-white/10 rounded-xl h-64 lg:h-80 p-6 flex flex-col justify-center">
-      <div className="space-y-4">
+    <div className="bg-ardito-surface border border-white/10 rounded-xl h-64 lg:h-80 p-4 lg:p-5 flex flex-col justify-center overflow-hidden">
+      <div className="space-y-3">
         {/* Mini metrics */}
-        <div className="grid grid-cols-2 gap-3">
-          <div className="bg-white/5 rounded-lg p-3">
-            <p className="text-xs text-muted-foreground">Attributed Revenue</p>
-            <p className="font-mono text-xl font-bold text-ardito-green">$56,550</p>
+        <div className="grid grid-cols-2 gap-2">
+          <div className="bg-white/5 border border-white/10 rounded-lg p-2 lg:p-3">
+            <p className="text-[10px] lg:text-xs text-muted-foreground">Attributed Revenue</p>
+            <p className="font-mono text-lg lg:text-xl font-bold text-ardito-green">$56,550</p>
           </div>
-          <div className="bg-white/5 rounded-lg p-3">
-            <p className="text-xs text-muted-foreground">Campaign ROI</p>
-            <p className="font-mono text-xl font-bold text-ardito-green">9.1x</p>
+          <div className="bg-white/5 border border-white/10 rounded-lg p-2 lg:p-3">
+            <p className="text-[10px] lg:text-xs text-muted-foreground">Campaign ROI</p>
+            <p className="font-mono text-lg lg:text-xl font-bold text-ardito-green">9.1x</p>
           </div>
         </div>
         
         {/* Attribution funnel */}
-        <div className="space-y-2">
-          <p className="text-xs text-muted-foreground font-mono">ATTRIBUTION CHAIN</p>
-          <div className="space-y-1">
+        <div className="space-y-1">
+          <p className="text-[10px] lg:text-xs text-muted-foreground font-mono">ATTRIBUTION CHAIN</p>
+          <div className="space-y-0.5">
             {[
-              { label: "Emotion Detected", value: "EUPHORIA 94%", color: "ardito-green" },
-              { label: "Campaign Activated", value: "3 channels", color: "ardito-blue" },
-              { label: "Impressions", value: "847K", color: "ardito-blue" },
-              { label: "Engagements", value: "35.2%", color: "ardito-green" },
-              { label: "Conversions", value: "3,977", color: "ardito-green" },
-            ].map((item, i) => (
-              <div key={item.label} className="flex items-center justify-between py-1.5 border-b border-white/5">
-                <span className="text-xs text-muted-foreground">{item.label}</span>
-                <span className={`text-xs font-mono font-medium text-${item.color}`}>{item.value}</span>
+              { label: "Emotion Detected", value: "EUPHORIA 94%", color: "text-ardito-green" },
+              { label: "Campaign Activated", value: "3 channels", color: "text-ardito-blue" },
+              { label: "Impressions", value: "847K", color: "text-ardito-blue" },
+              { label: "Engagements", value: "35.2%", color: "text-ardito-green" },
+              { label: "Conversions", value: "3,977", color: "text-ardito-green" },
+            ].map((item) => (
+              <div key={item.label} className="flex items-center justify-between py-1 border-b border-white/5">
+                <span className="text-[10px] lg:text-xs text-muted-foreground">{item.label}</span>
+                <span className={`text-[10px] lg:text-xs font-mono font-medium ${item.color}`}>{item.value}</span>
               </div>
             ))}
           </div>
         </div>
         
         {/* Comparison badge */}
-        <div className="bg-ardito-blue/10 border border-ardito-blue/30 rounded-lg p-2 text-center">
-          <span className="text-xs text-muted-foreground">vs. Traditional: </span>
-          <span className="text-xs font-bold text-ardito-blue">4.3x better ROI</span>
+        <div className="bg-ardito-blue/10 border border-ardito-blue/30 rounded p-1.5 lg:p-2 text-center">
+          <span className="text-[10px] lg:text-xs text-muted-foreground">vs. Traditional: </span>
+          <span className="text-[10px] lg:text-xs font-bold text-ardito-blue">4.3x better ROI</span>
         </div>
       </div>
     </div>
