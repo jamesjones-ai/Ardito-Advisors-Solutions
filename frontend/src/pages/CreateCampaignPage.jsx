@@ -628,7 +628,7 @@ const CreateCampaignPage = () => {
     try {
       await api.post("/campaigns", formData);
       toast.success("Campaign created successfully!");
-      navigate("/campaigns");
+      navigate("/app/campaigns");
     } catch (error) {
       toast.error(error.response?.data?.detail || "Failed to create campaign");
     } finally {

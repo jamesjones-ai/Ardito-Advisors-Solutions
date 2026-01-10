@@ -231,7 +231,7 @@ const GameDetailPage = () => {
                 </div>
               ))}
             </div>
-            <Link to="/campaigns/create">
+            <Link to="/app/campaigns/create">
               <Button variant="outline" className="w-full mt-4 border-white/10">
                 <Target className="h-4 w-4 mr-2" />
                 Activate Campaign

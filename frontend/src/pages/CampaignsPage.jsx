@@ -154,7 +154,7 @@ const CampaignRow = ({ campaign, onStatusChange, onDelete }) => {
               <Copy className="mr-2 h-4 w-4" />
               Duplicate
             </DropdownMenuItem>
-            <Link to={`/campaigns/${campaign.id}/analytics`}>
+            <Link to={`/app/campaigns/${campaign.id}/analytics`}>
               <DropdownMenuItem className="cursor-pointer">
                 <BarChart3 className="mr-2 h-4 w-4" />
                 View Analytics

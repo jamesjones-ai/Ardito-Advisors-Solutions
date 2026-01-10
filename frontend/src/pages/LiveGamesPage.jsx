@@ -160,7 +160,7 @@ const GameCard = ({ game }) => {
             </span>
           )}
         </div>
-        <Link to={`/live-games/${game.id}`}>
+        <Link to={`/app/live-games/${game.id}`}>
           <Button variant="ghost" size="sm" className="text-ardito-blue hover:text-ardito-blue">
             View Details
           </Button>
