@@ -217,12 +217,12 @@ const EmotionTicker = () => {
 // Visualization 1: Own the Relationship - Data Flow
 const OwnRelationshipViz = () => {
   return (
-    <div className="bg-ardito-surface border border-white/10 rounded-xl h-64 lg:h-80 p-6 flex flex-col justify-center">
-      <div className="space-y-4">
+    <div className="bg-ardito-surface border border-white/10 rounded-xl h-64 lg:h-80 p-4 lg:p-6 flex flex-col justify-center overflow-hidden">
+      <div className="space-y-3 lg:space-y-4">
         {/* Social platforms row */}
-        <div className="flex justify-center gap-3">
-          {["Instagram", "TikTok", "X"].map((platform) => (
-            <div key={platform} className="px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-xs text-muted-foreground">
+        <div className="flex justify-center gap-2">
+          {["IG", "TikTok", "X"].map((platform) => (
+            <div key={platform} className="px-2 lg:px-3 py-1.5 bg-white/5 border border-white/10 rounded text-xs text-muted-foreground whitespace-nowrap">
               {platform}
             </div>
           ))}
@@ -230,39 +230,39 @@ const OwnRelationshipViz = () => {
         
         {/* Arrow down */}
         <div className="flex justify-center">
-          <div className="h-8 w-0.5 bg-gradient-to-b from-white/20 to-ardito-blue relative">
-            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-ardito-blue" />
+          <div className="h-6 lg:h-8 w-0.5 bg-gradient-to-b from-white/20 to-ardito-blue relative">
+            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[3px] border-r-[3px] border-t-[4px] border-transparent border-t-ardito-blue" />
           </div>
         </div>
         
         {/* Ardito processing */}
         <div className="flex justify-center">
-          <div className="px-6 py-3 bg-ardito-blue/20 border border-ardito-blue/50 rounded-lg">
-            <span className="text-ardito-blue font-mono text-sm font-bold">ARDITO EIP</span>
-            <p className="text-xs text-muted-foreground mt-1">Emotion Detection</p>
+          <div className="px-4 lg:px-6 py-2 lg:py-3 bg-ardito-blue/20 border border-ardito-blue/50 rounded-lg text-center">
+            <span className="text-ardito-blue font-mono text-xs lg:text-sm font-bold">ARDITO EIP</span>
+            <p className="text-[10px] lg:text-xs text-muted-foreground mt-0.5">Emotion Detection</p>
           </div>
         </div>
         
         {/* Arrow down */}
         <div className="flex justify-center">
-          <div className="h-8 w-0.5 bg-gradient-to-b from-ardito-blue to-ardito-green relative">
-            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-ardito-green" />
+          <div className="h-6 lg:h-8 w-0.5 bg-gradient-to-b from-ardito-blue to-ardito-green relative">
+            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[3px] border-r-[3px] border-t-[4px] border-transparent border-t-ardito-green" />
           </div>
         </div>
         
         {/* Your channels row */}
-        <div className="flex justify-center gap-3">
-          {["Stadium", "Mobile App", "Your Ads"].map((channel) => (
-            <div key={channel} className="px-3 py-2 bg-ardito-green/10 border border-ardito-green/30 rounded-lg text-xs text-ardito-green font-medium">
+        <div className="flex justify-center gap-2">
+          {["Stadium", "App", "Ads"].map((channel) => (
+            <div key={channel} className="px-2 lg:px-3 py-1.5 bg-ardito-green/10 border border-ardito-green/30 rounded text-xs text-ardito-green font-medium whitespace-nowrap">
               {channel}
             </div>
           ))}
         </div>
         
         {/* Revenue indicator */}
-        <div className="text-center pt-2">
-          <span className="text-xs text-muted-foreground">Revenue flows to </span>
-          <span className="text-xs text-ardito-green font-bold">YOU</span>
+        <div className="text-center pt-1">
+          <span className="text-[10px] lg:text-xs text-muted-foreground">Revenue flows to </span>
+          <span className="text-[10px] lg:text-xs text-ardito-green font-bold">YOU</span>
         </div>
       </div>
     </div>
