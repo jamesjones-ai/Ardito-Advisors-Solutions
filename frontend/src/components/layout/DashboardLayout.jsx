@@ -30,11 +30,11 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Badge } from "@/components/ui/badge";
 
 const navItems = [
-  { path: "/dashboard", icon: LayoutDashboard, label: "Dashboard" },
-  { path: "/live-games", icon: Radio, label: "Live Games" },
-  { path: "/campaigns", icon: Megaphone, label: "Campaigns" },
-  { path: "/analytics", icon: BarChart3, label: "Analytics" },
-  { path: "/settings", icon: Settings, label: "Settings" },
+  { path: "/app/dashboard", icon: LayoutDashboard, label: "Dashboard" },
+  { path: "/app/live-games", icon: Radio, label: "Live Games" },
+  { path: "/app/campaigns", icon: Megaphone, label: "Campaigns" },
+  { path: "/app/analytics", icon: BarChart3, label: "Analytics" },
+  { path: "/app/settings", icon: Settings, label: "Settings" },
 ];
 
 const LiveIndicator = () => (
@@ -164,7 +164,7 @@ const TopBar = () => {
     <header className="fixed top-0 left-0 right-0 h-16 bg-ardito-surface border-b border-white/10 z-50 flex items-center justify-between px-4">
       <div className="flex items-center gap-4">
         <MobileNav />
-        <NavLink to="/dashboard" className="flex items-center gap-2">
+        <NavLink to="/app/dashboard" className="flex items-center gap-2">
           <img 
             src="https://customer-assets.emergentagent.com/job_fan-pulse/artifacts/h7eqeolp_ardito_logo_offwhite.png" 
             alt="Ardito" 
@@ -216,7 +216,7 @@ const TopBar = () => {
             </div>
             <DropdownMenuSeparator className="bg-white/10" />
             <DropdownMenuItem asChild>
-              <NavLink to="/settings" className="cursor-pointer">
+              <NavLink to="/app/settings" className="cursor-pointer">
                 <User className="mr-2 h-4 w-4" />
                 Account Settings
               </NavLink>
