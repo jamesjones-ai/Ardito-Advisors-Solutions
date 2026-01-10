@@ -1,161 +1,147 @@
 {
-  "project_name": "Ardito Emotion Intelligence Platform (EIP)",
-  "design_philosophy": {
-    "identity": "The Digital Stadium",
-    "core_concept": "High-performance control room. Dark, precise, electric.",
+  "identity": {
+    "persona": "E1",
+    "mission": "Elevate Ardito EIP from 'Sports Betting' to 'Enterprise Emotion Intelligence'. Fusion of Swiss Precision and Cinematic Sports Energy.",
     "principles": [
-      "Data is the Hero: Charts and metrics take precedence over decoration.",
-      "Electric Contrast: Use neon accents (Blue/Green/Orange) against Deep Charcoal to guide attention.",
-      "Real-time Pulse: The UI should feel alive. Use subtle pulses for live data.",
-      "Density with Breath: High density for data, high breathing room for decisions."
+      "Fusion over Imitation: Mix Bloomberg Terminal density with Nike commercial cinematography.",
+      "Emotion First: Data is the hero, but the feeling is 'Control' and 'Insight'.",
+      "Content is King: Every pixel serves the ROI story.",
+      "Zoom In: Focus on the data points that matter.",
+      "Negative Space: Luxury = Space."
     ]
   },
   "typography": {
     "font_family": {
-      "headings": "\"Chivo\", sans-serif",
-      "body": "\"Manrope\", sans-serif",
-      "mono": "\"JetBrains Mono\", monospace"
+      "heading": "Chivo, sans-serif",
+      "body": "Manrope, sans-serif",
+      "mono": "JetBrains Mono, monospace"
     },
-    "installation": {
-      "google_fonts_link": "<link href=\"https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap\" rel=\"stylesheet\">"
-    },
-    "usage_rules": [
-      "Headings (H1-H3): Chivo Black or Bold. Tight tracking (-0.02em). Uppercase for labels.",
-      "Body: Manrope. High legibility.",
-      "Data/Numbers: JetBrains Mono. Tabular nums for live counters."
-    ]
+    "styles": {
+      "h1": "text-5xl md:text-7xl font-bold tracking-tighter leading-[1.1] text-white",
+      "h2": "text-3xl md:text-5xl font-semibold tracking-tight text-white",
+      "h3": "text-xl md:text-2xl font-medium tracking-tight text-white",
+      "body_large": "text-lg md:text-xl text-gray-300 leading-relaxed",
+      "body_default": "text-base text-gray-400 leading-relaxed",
+      "caption": "text-xs font-mono uppercase tracking-widest text-gray-500",
+      "data_value": "font-mono text-emerald-400 font-bold"
+    }
   },
   "colors": {
     "palette": {
-      "primary": {
-        "name": "Electric Blue",
-        "hex": "#0066FF",
-        "tailwind_var": "--primary",
-        "usage": "Primary actions, active states, key metrics"
-      },
-      "secondary": {
-        "name": "Vibrant Green",
-        "hex": "#00FF66",
-        "tailwind_var": "--secondary",
-        "usage": "Success states, positive trends, 'Live' indicators"
-      },
-      "accent": {
-        "name": "Stadium Orange",
-        "hex": "#FF6B00",
-        "tailwind_var": "--accent",
-        "usage": "Alerts, heatmaps, high-intensity zones"
-      },
-      "background": {
-        "name": "Deep Charcoal",
-        "hex": "#1A1A1A",
-        "tailwind_var": "--background",
-        "usage": "App background"
-      },
-      "surface": {
-        "name": "Off-Charcoal",
-        "hex": "#252525",
-        "tailwind_var": "--card",
-        "usage": "Cards, sidebars, panels"
-      },
-      "text": {
-        "main": "#F5F5F5",
-        "muted": "#A3A3A3"
-      }
+      "background": "#02040A",
+      "surface": "#0B0D14",
+      "surface_highlight": "#161922",
+      "primary": "#3B82F6",
+      "primary_foreground": "#FFFFFF",
+      "secondary": "#10B981",
+      "accent": "#F59E0B",
+      "destructive": "#EF4444",
+      "border": "rgba(255, 255, 255, 0.08)",
+      "ring": "rgba(59, 130, 246, 0.5)"
     },
-    "tailwind_config_extension": {
-      "colors": {
-        "ardito-blue": "#0066FF",
-        "ardito-green": "#00FF66",
-        "ardito-orange": "#FF6B00",
-        "ardito-charcoal": "#1A1A1A",
-        "ardito-surface": "#252525"
-      }
+    "gradients": {
+      "hero_overlay": "linear-gradient(to bottom, rgba(2,4,10,0.3) 0%, rgba(2,4,10,1) 100%)",
+      "glass": "linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)",
+      "glow_blue": "radial-gradient(circle at center, rgba(59, 130, 246, 0.15) 0%, transparent 70%)"
+    },
+    "usage_rules": {
+      "background": "Use #02040A as the global background. Avoid pure black.",
+      "cards": "Use Glassmorphism strategy. bg-white/5 with backdrop-blur-md and border-white/10.",
+      "text": "Never use pure white for body text. Use #D1D5DB (gray-300) or #9CA3AF (gray-400).",
+      "brand": "Use Primary Blue (#3B82F6) sparingly for CTAs and active states. Do not overuse."
     }
   },
-  "layout_strategies": {
-    "dashboard": {
-      "grid_type": "Control Room Grid",
-      "structure": "grid grid-cols-12 gap-4 p-6",
-      "rules": [
-        "Top Rail: Live Global Stats (Score, Active Campaigns). Height: fixed.",
-        "Main Stage: Central visualization (Live Game Monitor). Col-span-8.",
-        "Side Panel: Feed/Alerts. Col-span-4.",
-        "Bottom Deck: Detailed tables/lists."
-      ]
+  "visual_enhancers": {
+    "borders": "1px solid rgba(255, 255, 255, 0.08)",
+    "shadows": {
+      "card": "0 8px 32px rgba(0, 0, 0, 0.2)",
+      "glow": "0 0 20px rgba(59, 130, 246, 0.3)"
     },
-    "campaign_wizard": {
-      "type": "Tunnel Vision",
-      "structure": "max-w-4xl mx-auto py-12",
-      "rules": [
-        "Remove sidebar navigation during wizard flow.",
-        "Step indicator must be prominent and clickable.",
-        "Split screen: Left side inputs, Right side 'Live Preview' of the campaign."
-      ]
+    "radius": {
+      "default": "rounded-lg",
+      "button": "rounded-md",
+      "card": "rounded-xl"
+    },
+    "textures": "Add a subtle noise overlay (opacity 0.03) to the background to kill digital flatness."
+  },
+  "layout_strategies": {
+    "spacing": {
+      "section_padding": "py-24 md:py-32",
+      "container_padding": "px-6 md:px-12",
+      "element_gap": "gap-8 md:gap-12"
+    },
+    "grids": {
+      "bento": "grid grid-cols-1 md:grid-cols-3 gap-6",
+      "hero": "flex flex-col items-center justify-center text-center min-h-[80vh]",
+      "features": "grid grid-cols-1 md:grid-cols-12 gap-8"
     }
   },
   "components": {
-    "cards": {
-      "style": "Flat, sharp or minimal radius (rounded-md).",
-      "border": "1px solid rgba(255,255,255,0.1)",
-      "background": "#252525",
-      "hover": "border-ardito-blue/50 transition-colors duration-300"
-    },
     "buttons": {
-      "primary": "bg-ardito-blue text-white font-bold uppercase tracking-wide rounded-sm hover:bg-blue-600 shadow-[0_0_15px_rgba(0,102,255,0.3)]",
-      "secondary": "border border-white/20 text-white hover:bg-white/10 rounded-sm"
+      "primary": "bg-primary text-white hover:bg-primary/90 shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all duration-300",
+      "secondary": "bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm border border-white/10",
+      "ghost": "text-gray-400 hover:text-white hover:bg-white/5"
     },
-    "charts": {
-      "library": "Recharts",
-      "theme": "Dark Mode",
-      "grid": "stroke-white/5",
-      "tooltip": "bg-ardito-surface border-white/10 text-white"
+    "cards": {
+      "feature": "group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 hover:border-white/20 transition-colors",
+      "stat": "flex flex-col p-6 rounded-xl bg-surface border border-white/5"
+    },
+    "navigation": {
+      "wrapper": "fixed top-0 w-full z-50 border-b border-white/5 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60"
     }
   },
-  "visual_assets": {
-    "images": [
+  "image_urls": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1763854413165-1713bc5a7f4a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHw0fHxwYXNzaW9uYXRlJTIwc3BvcnRzJTIwZmFucyUyMHN0YWRpdW0lMjBuaWdodHxlbnwwfHx8fDE3NjgwMTg2NTd8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Massive stadium crowd at night, conveying scale and emotion. Apply heavy dark overlay.",
+      "category": "hero"
+    },
+    "enterprise_context": {
+      "url": "https://images.pexels.com/photos/8729936/pexels-photo-8729936.jpeg",
+      "description": "Corporate meeting room, serious tone, data analysis context.",
+      "category": "feature_context"
+    },
+    "trust_logos": [
       {
-        "category": "Login Background",
-        "url": "https://images.unsplash.com/photo-1763854413165-1713bc5a7f4a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwxfHxzdGFkaXVtJTIwY3Jvd2QlMjBuaWdodCUyMGF0bW9zcGhlcmV8ZW58MHx8fHwxNzY4MDE0MjgxfDA&ixlib=rb-4.1.0&q=85",
-        "description": "Stadium crowd at night, atmospheric, dark."
+        "url": "https://images.unsplash.com/photo-1572949645843-4395e309f43a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwxfHx0ZWNoJTIwY29tcGFueSUyMGxvZ28lMjB3aGl0ZSUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzY3OTUzNjY0fDA&ixlib=rb-4.1.0&q=85",
+        "name": "Tech Corp"
       },
       {
-        "category": "Success/Victory",
-        "url": "https://images.unsplash.com/photo-1555895105-6022ff2328cf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwxfHxhdGhsZXRlJTIwY2VsZWJyYXRpbmclMjB2aWN0b3J5JTIwZW1vdGlvbmFsfGVufDB8fHx8MTc2ODAxNDI4Mnww&ixlib=rb-4.1.0&q=85",
-        "description": "Athlete celebrating, high emotion."
+        "url": "https://images.unsplash.com/photo-1518841024803-143c51852c8a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwyfHx0ZWNoJTIwY29tcGFueSUyMGxvZ28lMjB3aGl0ZSUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzY3OTUzNjY0fDA&ixlib=rb-4.1.0&q=85",
+        "name": "Reebok"
       },
       {
-        "category": "Action/Dynamic",
-        "url": "https://images.unsplash.com/photo-1603212148535-3cba3dbd0de1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHw0fHxzb2NjZXIlMjBtYXRjaCUyMGFjdGlvbiUyMGR5bmFtaWN8ZW58MHx8fHwxNzY4MDE0Mjg0fDA&ixlib=rb-4.1.0&q=85",
-        "description": "Soccer match action, green field contrast."
+        "url": "https://images.unsplash.com/photo-1600848478834-e478f4c6bfcc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHw0fHx0ZWNoJTIwY29tcGFueSUyMGxvZ28lMjB3aGl0ZSUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzY3OTUzNjY0fDA&ixlib=rb-4.1.0&q=85",
+        "name": "Xbox"
       }
-    ],
-    "icons": "Lucide React (default). Use thin strokes (1.5px) for elegance."
-  },
-  "universal_guidelines": {
-    "do_not": [
-      "DO NOT use gradients for text.",
-      "DO NOT use rounded-xl or rounded-2xl. Keep it technical (rounded-md or rounded-sm).",
-      "DO NOT use pure black (#000000). Use #1A1A1A.",
-      "DO NOT center text in data tables. Align numbers right, text left."
-    ],
-    "must_do": [
-      "MUST use 'data-testid' on all interactive elements.",
-      "MUST use 'sonner' for toasts.",
-      "MUST implement a 'Live' indicator (pulsing green dot) for real-time screens.",
-      "MUST use Skeleton loaders for data fetching states."
     ]
   },
-  "instructions_to_main_agent": {
-    "setup_steps": [
-      "1. Install fonts via Google Fonts in index.html.",
-      "2. Update tailwind.config.js with the Ardito color palette.",
-      "3. Set global CSS variables in index.css to match the Dark Mode palette by default.",
-      "4. Install 'framer-motion' for smooth layout transitions (yarn add framer-motion).",
-      "5. Create the Layout wrapper with the Sidebar and Topbar."
-    ],
-    "file_handling": {
-      "css": "Use Tailwind classes primarily. Use App.css only for complex animations.",
-      "components": "Customize Shadcn components in /components/ui to match the 'Cards' and 'Buttons' specs defined above."
-    }
-  }
+  "motion": {
+    "transitions": "transition-all duration-300 ease-out",
+    "hover_effects": "hover:-translate-y-1 hover:shadow-lg",
+    "scroll_reveal": "Use Framer Motion for 'whileInView' animations. Fade up with 20px y-offset."
+  },
+  "instructions_to_main_agent": [
+    "1. Update tailwind.config.js with the new color palette (Deep Night #02040A).",
+    "2. Refactor the Hero section to use the 'Stadium' image as a background with a gradient overlay.",
+    "3. Implement the 'Trust Signals' marquee immediately after the hero.",
+    "4. Redesign the 'Value Prop' section using the Bento Grid layout.",
+    "5. Ensure all text has proper contrast. Use the 'text-gray-300' for body text.",
+    "6. Use 'Chivo' font for all headings with 'tracking-tighter'.",
+    "7. Add 'data-testid' to all interactive elements."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition. Eg: transition: all.",
+    "You MUST NOT center align the app container.",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations.",
+    "NEVER use AI assistant Emoji characters.",
+    "Every interaction needs micro-animations.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations.",
+    "Use sonner for toasts."
+  ]
 }
