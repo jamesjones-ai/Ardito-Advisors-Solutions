@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.6ac315d6.css",
-    "main.js": "/static/js/main.ebd433cd.js",
-    "index.html": "/index.html",
-    "main.6ac315d6.css.map": "/static/css/main.6ac315d6.css.map",
-    "main.ebd433cd.js.map": "/static/js/main.ebd433cd.js.map"
+    "main.css": "/Ardito-Advisors-Solutions/static/css/main.6ac315d6.css",
+    "main.js": "/Ardito-Advisors-Solutions/static/js/main.44e48e1b.js",
+    "index.html": "/Ardito-Advisors-Solutions/index.html",
+    "main.6ac315d6.css.map": "/Ardito-Advisors-Solutions/static/css/main.6ac315d6.css.map",
+    "main.44e48e1b.js.map": "/Ardito-Advisors-Solutions/static/js/main.44e48e1b.js.map"
   },
   "entrypoints": [
     "static/css/main.6ac315d6.css",
-    "static/js/main.ebd433cd.js"
+    "static/js/main.44e48e1b.js"
   ]
 }
