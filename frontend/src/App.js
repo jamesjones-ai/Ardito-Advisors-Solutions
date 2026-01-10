@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { AuthProvider, useAuth } from "@/contexts/AuthContext";
 
 // Pages
+import LandingPage from "@/pages/LandingPage";
 import LoginPage from "@/pages/LoginPage";
 import DashboardPage from "@/pages/DashboardPage";
 import LiveGamesPage from "@/pages/LiveGamesPage";
@@ -55,18 +56,19 @@ const PublicRoute = ({ children }) => {
 function AppRoutes() {
   return (
     <Routes>
+      <Route path="/" element={<LandingPage />} />
       <Route path="/login" element={
         <PublicRoute>
           <LoginPage />
         </PublicRoute>
       } />
       
-      <Route path="/" element={
+      <Route path="/app" element={
         <ProtectedRoute>
           <DashboardLayout />
         </ProtectedRoute>
       }>
-        <Route index element={<Navigate to="/dashboard" replace />} />
+        <Route index element={<Navigate to="/app/dashboard" replace />} />
         <Route path="dashboard" element={<DashboardPage />} />
         <Route path="live-games" element={<LiveGamesPage />} />
         <Route path="live-games/:gameId" element={<GameDetailPage />} />
@@ -76,7 +78,7 @@ function AppRoutes() {
         <Route path="settings" element={<SettingsPage />} />
       </Route>
       
-      <Route path="*" element={<Navigate to="/dashboard" replace />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
