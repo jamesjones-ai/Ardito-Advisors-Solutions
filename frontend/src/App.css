@@ -1,34 +1,123 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Ardito EIP Custom Styles */
+
+/* Animation keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* Live pulse animation */
+.live-indicator {
+  position: relative;
 }
 
-.App-link {
-    color: #61dafb;
+.live-indicator::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
 }
+
+/* Custom card hover effect */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 102, 255, 0.15);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #0066FF 0%, #00FF66 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Chart tooltip custom styling */
+.recharts-tooltip-wrapper {
+  outline: none !important;
+}
+
+/* Scrollable container shadows */
+.scroll-shadows {
+  background:
+    linear-gradient(to right, #252525, #252525),
+    linear-gradient(to right, #252525, #252525),
+    linear-gradient(to right, rgba(0,0,0,0.25), transparent),
+    linear-gradient(to left, rgba(0,0,0,0.25), transparent);
+  background-position: left center, right center, left center, right center;
+  background-repeat: no-repeat;
+  background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
+  background-attachment: local, local, scroll, scroll;
+}
+
+/* Focus visible styles for accessibility */
+:focus-visible {
+  outline: 2px solid #0066FF;
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(0, 102, 255, 0.3);
+  color: inherit;
+}
+
+/* Loading skeleton shimmer */
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.05) 25%,
+    rgba(255,255,255,0.1) 50%,
+    rgba(255,255,255,0.05) 75%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Number counter animation */
+.counter-animate {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.counter-animate:hover {
+  transform: scale(1.05);
+}
+
+/* Emotion color utility classes */
+.emotion-euphoria { color: #00FF66; }
+.emotion-tension { color: #0066FF; }
+.emotion-frustration { color: #FF0000; }
+.emotion-nostalgia { color: #9C27B0; }
+.emotion-pride { color: #FFD700; }
+.emotion-anxiety { color: #FF6B00; }
+.emotion-disappointment { color: #757575; }
+
+.bg-emotion-euphoria { background-color: rgba(0, 255, 102, 0.2); }
+.bg-emotion-tension { background-color: rgba(0, 102, 255, 0.2); }
+.bg-emotion-frustration { background-color: rgba(255, 0, 0, 0.2); }
+.bg-emotion-nostalgia { background-color: rgba(156, 39, 176, 0.2); }
+.bg-emotion-pride { background-color: rgba(255, 215, 0, 0.2); }
+.bg-emotion-anxiety { background-color: rgba(255, 107, 0, 0.2); }
+.bg-emotion-disappointment { background-color: rgba(117, 117, 117, 0.2); }
