@@ -107,7 +107,7 @@ const LiveGameCard = ({ game }) => {
             score={latestEmotion.confidence}
           />
         )}
-        <Link to={`/live-games/${game.id}`}>
+        <Link to={`/app/live-games/${game.id}`}>
           <Button variant="ghost" size="sm" className="text-ardito-blue hover:text-ardito-blue">
             View Details <ArrowRight className="ml-1 h-3 w-3" />
           </Button>
@@ -212,7 +212,7 @@ const DashboardPage = () => {
           <h1 className="font-heading text-2xl font-bold">Dashboard</h1>
           <p className="text-muted-foreground text-sm">Real-time emotion intelligence overview</p>
         </div>
-        <Link to="/campaigns/create">
+        <Link to="/app/campaigns/create">
           <Button className="bg-ardito-blue hover:bg-blue-600" data-testid="create-campaign-btn">
             <Megaphone className="mr-2 h-4 w-4" />
             New Campaign
@@ -270,7 +270,7 @@ const DashboardPage = () => {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-ardito-green"></span>
               </span>
             </div>
-            <Link to="/live-games" className="text-sm text-ardito-blue hover:underline">
+            <Link to="/app/live-games" className="text-sm text-ardito-blue hover:underline">
               View all games
             </Link>
           </div>
@@ -286,7 +286,7 @@ const DashboardPage = () => {
       <div className="bg-ardito-surface border border-white/10 rounded-md p-5">
         <div className="flex items-center justify-between mb-4">
           <h2 className="font-heading text-lg font-bold">Recent Campaign Activations</h2>
-          <Link to="/analytics" className="text-sm text-ardito-blue hover:underline">
+          <Link to="/app/analytics" className="text-sm text-ardito-blue hover:underline">
             View all
           </Link>
         </div>
