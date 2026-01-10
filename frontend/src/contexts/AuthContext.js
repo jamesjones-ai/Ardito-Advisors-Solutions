@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect, useCallback } from "react";
-import { api, setAuthToken, clearAuthToken } from "@/lib/api";
+import { api, authApi, setAuthToken, clearAuthToken } from "@/lib/api";
 
 const AuthContext = createContext(null);
 
@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }) => {
 
     setAuthToken(token);
     try {
-      const response = await api.get("/auth/me");
+      const response = await authApi.get("/auth/me");
       setUser(response.data);
     } catch (error) {
       console.error("Auth check failed:", error);
@@ -40,19 +40,19 @@ export const AuthProvider = ({ children }) => {
   }, [checkAuth]);
 
   const login = async (email, password) => {
-    const response = await api.post("/auth/login", { email, password });
-    const { access_token, user: userData } = response.data;
-    localStorage.setItem("ardito_token", access_token);
-    setAuthToken(access_token);
+    const response = await authApi.post("/auth/login", { email, password });
+    const { accessToken, user: userData } = response.data;
+    localStorage.setItem("ardito_token", accessToken);
+    setAuthToken(accessToken);
     setUser(userData);
     return userData;
   };
 
   const register = async (email, password, name, company) => {
-    const response = await api.post("/auth/register", { email, password, name, company });
-    const { access_token, user: userData } = response.data;
-    localStorage.setItem("ardito_token", access_token);
-    setAuthToken(access_token);
+    const response = await authApi.post("/auth/register", { email, password, name, company });
+    const { accessToken, user: userData } = response.data;
+    localStorage.setItem("ardito_token", accessToken);
+    setAuthToken(accessToken);
     setUser(userData);
     return userData;
   };
