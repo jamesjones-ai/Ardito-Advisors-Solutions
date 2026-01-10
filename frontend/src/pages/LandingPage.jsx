@@ -716,9 +716,9 @@ const LandingPage = () => {
                   </ul>
                 </div>
                 <div className="flex-1 w-full">
-                  <div className="bg-ardito-surface border border-white/10 rounded-xl h-64 lg:h-80 flex items-center justify-center">
-                    <span className="text-muted-foreground font-mono text-sm">[{prop.title} visualization]</span>
-                  </div>
+                  {i === 0 && <OwnRelationshipViz />}
+                  {i === 1 && <EmotionalPeaksViz />}
+                  {i === 2 && <ProveROIViz />}
                 </div>
               </motion.div>
             ))}
