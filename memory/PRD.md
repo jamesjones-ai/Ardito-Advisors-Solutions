@@ -78,6 +78,8 @@ January 10, 2025
 - ✅ Dashboard with metrics
 - ✅ Live games monitoring
 - ✅ Campaign CRUD
+- ✅ Landing page with marketing copy
+- ✅ Navigation links fixed (all routes use /app prefix)
 
 ### P1 (Important)
 - [ ] Real WebSocket for live updates
