@@ -96,8 +96,13 @@ January 10, 2025
 - [ ] Mobile app version
 
 ## Next Tasks
-1. Add real-time WebSocket for emotion updates
-2. Implement file upload for campaign creatives
-3. Add campaign-specific analytics page
-4. Integrate notification bell functionality
-5. Add school management features
+1. Connect to MongoDB database (replace mock data)
+2. Add real-time WebSocket for emotion updates
+3. Implement file upload for campaign creatives
+4. Add campaign-specific analytics page
+5. Integrate notification bell functionality
+6. Add school management features
+
+## Test Credentials
+- Email: test@test.com
+- Password: test
