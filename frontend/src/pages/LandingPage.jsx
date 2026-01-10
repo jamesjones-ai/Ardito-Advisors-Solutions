@@ -214,6 +214,186 @@ const EmotionTicker = () => {
   );
 };
 
+// Visualization 1: Own the Relationship - Data Flow
+const OwnRelationshipViz = () => {
+  return (
+    <div className="bg-ardito-surface border border-white/10 rounded-xl h-64 lg:h-80 p-6 flex flex-col justify-center">
+      <div className="space-y-4">
+        {/* Social platforms row */}
+        <div className="flex justify-center gap-3">
+          {["Instagram", "TikTok", "X"].map((platform) => (
+            <div key={platform} className="px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-xs text-muted-foreground">
+              {platform}
+            </div>
+          ))}
+        </div>
+        
+        {/* Arrow down */}
+        <div className="flex justify-center">
+          <div className="h-8 w-0.5 bg-gradient-to-b from-white/20 to-ardito-blue relative">
+            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-ardito-blue" />
+          </div>
+        </div>
+        
+        {/* Ardito processing */}
+        <div className="flex justify-center">
+          <div className="px-6 py-3 bg-ardito-blue/20 border border-ardito-blue/50 rounded-lg">
+            <span className="text-ardito-blue font-mono text-sm font-bold">ARDITO EIP</span>
+            <p className="text-xs text-muted-foreground mt-1">Emotion Detection</p>
+          </div>
+        </div>
+        
+        {/* Arrow down */}
+        <div className="flex justify-center">
+          <div className="h-8 w-0.5 bg-gradient-to-b from-ardito-blue to-ardito-green relative">
+            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-ardito-green" />
+          </div>
+        </div>
+        
+        {/* Your channels row */}
+        <div className="flex justify-center gap-3">
+          {["Stadium", "Mobile App", "Your Ads"].map((channel) => (
+            <div key={channel} className="px-3 py-2 bg-ardito-green/10 border border-ardito-green/30 rounded-lg text-xs text-ardito-green font-medium">
+              {channel}
+            </div>
+          ))}
+        </div>
+        
+        {/* Revenue indicator */}
+        <div className="text-center pt-2">
+          <span className="text-xs text-muted-foreground">Revenue flows to </span>
+          <span className="text-xs text-ardito-green font-bold">YOU</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Visualization 2: Activate at Emotional Peaks - Real-time trigger
+const EmotionalPeaksViz = () => {
+  const [emotionLevel, setEmotionLevel] = useState(45);
+  const [isActivated, setIsActivated] = useState(false);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setEmotionLevel((prev) => {
+        const next = prev + (Math.random() * 15 - 5);
+        const clamped = Math.max(30, Math.min(95, next));
+        if (clamped > 80 && !isActivated) {
+          setIsActivated(true);
+          setTimeout(() => setIsActivated(false), 2000);
+        }
+        return clamped;
+      });
+    }, 800);
+    return () => clearInterval(interval);
+  }, [isActivated]);
+  
+  return (
+    <div className="bg-ardito-surface border border-white/10 rounded-xl h-64 lg:h-80 p-6 flex flex-col justify-center">
+      <div className="space-y-6">
+        {/* Header */}
+        <div className="flex items-center justify-between">
+          <span className="text-xs text-muted-foreground font-mono">EMOTION LEVEL</span>
+          <span className={`text-xs font-mono ${emotionLevel > 80 ? 'text-ardito-green' : 'text-ardito-blue'}`}>
+            {emotionLevel > 80 ? 'PEAK DETECTED' : 'MONITORING...'}
+          </span>
+        </div>
+        
+        {/* Emotion bar */}
+        <div className="space-y-2">
+          <div className="h-8 bg-white/5 rounded-lg overflow-hidden relative">
+            <motion.div
+              animate={{ width: `${emotionLevel}%` }}
+              transition={{ duration: 0.3 }}
+              className={`h-full rounded-lg ${emotionLevel > 80 ? 'bg-gradient-to-r from-ardito-blue to-ardito-green' : 'bg-ardito-blue'}`}
+            />
+            {/* Threshold marker */}
+            <div className="absolute top-0 bottom-0 left-[80%] w-0.5 bg-ardito-orange" />
+          </div>
+          <div className="flex justify-between text-xs">
+            <span className="text-muted-foreground">0%</span>
+            <span className="text-ardito-orange">Threshold: 80%</span>
+            <span className="text-muted-foreground">100%</span>
+          </div>
+        </div>
+        
+        {/* Current reading */}
+        <div className="text-center">
+          <span className="font-mono text-4xl font-bold" style={{ color: emotionLevel > 80 ? '#00FF66' : '#0066FF' }}>
+            {Math.round(emotionLevel)}%
+          </span>
+          <p className="text-sm text-muted-foreground mt-1">
+            {emotionLevel > 80 ? 'EUPHORIA' : emotionLevel > 60 ? 'TENSION' : 'ANTICIPATION'}
+          </p>
+        </div>
+        
+        {/* Activation status */}
+        <motion.div
+          animate={{ 
+            opacity: isActivated ? 1 : 0.3,
+            scale: isActivated ? 1.02 : 1
+          }}
+          className={`p-3 rounded-lg border ${isActivated ? 'bg-ardito-green/20 border-ardito-green/50' : 'bg-white/5 border-white/10'}`}
+        >
+          <div className="flex items-center justify-between">
+            <span className={`text-sm font-medium ${isActivated ? 'text-ardito-green' : 'text-muted-foreground'}`}>
+              {isActivated ? '⚡ Campaign Triggered!' : 'Waiting for peak...'}
+            </span>
+            <span className="text-xs font-mono text-muted-foreground">&lt;60s</span>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+// Visualization 3: Prove ROI - Attribution dashboard
+const ProveROIViz = () => {
+  return (
+    <div className="bg-ardito-surface border border-white/10 rounded-xl h-64 lg:h-80 p-6 flex flex-col justify-center">
+      <div className="space-y-4">
+        {/* Mini metrics */}
+        <div className="grid grid-cols-2 gap-3">
+          <div className="bg-white/5 rounded-lg p-3">
+            <p className="text-xs text-muted-foreground">Attributed Revenue</p>
+            <p className="font-mono text-xl font-bold text-ardito-green">$56,550</p>
+          </div>
+          <div className="bg-white/5 rounded-lg p-3">
+            <p className="text-xs text-muted-foreground">Campaign ROI</p>
+            <p className="font-mono text-xl font-bold text-ardito-green">9.1x</p>
+          </div>
+        </div>
+        
+        {/* Attribution funnel */}
+        <div className="space-y-2">
+          <p className="text-xs text-muted-foreground font-mono">ATTRIBUTION CHAIN</p>
+          <div className="space-y-1">
+            {[
+              { label: "Emotion Detected", value: "EUPHORIA 94%", color: "ardito-green" },
+              { label: "Campaign Activated", value: "3 channels", color: "ardito-blue" },
+              { label: "Impressions", value: "847K", color: "ardito-blue" },
+              { label: "Engagements", value: "35.2%", color: "ardito-green" },
+              { label: "Conversions", value: "3,977", color: "ardito-green" },
+            ].map((item, i) => (
+              <div key={item.label} className="flex items-center justify-between py-1.5 border-b border-white/5">
+                <span className="text-xs text-muted-foreground">{item.label}</span>
+                <span className={`text-xs font-mono font-medium text-${item.color}`}>{item.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Comparison badge */}
+        <div className="bg-ardito-blue/10 border border-ardito-blue/30 rounded-lg p-2 text-center">
+          <span className="text-xs text-muted-foreground">vs. Traditional: </span>
+          <span className="text-xs font-bold text-ardito-blue">4.3x better ROI</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // Live game visualization - Walk-off scenario
 const LiveGameViz = () => {
   const [emotion, setEmotion] = useState(78);
