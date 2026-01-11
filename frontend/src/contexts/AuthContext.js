@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
     setAuthToken(token);
     try {
       const response = await authApi.get("/auth/me");
-      setUser(response.data);
+      setUser(response.data.user || response.data);
     } catch (error) {
       console.error("Auth check failed:", error);
       localStorage.removeItem("ardito_token");
@@ -41,8 +41,11 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     const response = await authApi.post("/auth/login", { email, password });
-    const { accessToken, user: userData } = response.data;
+    const { accessToken, refreshToken, user: userData } = response.data;
     localStorage.setItem("ardito_token", accessToken);
+    if (refreshToken) {
+      localStorage.setItem("ardito_refresh_token", refreshToken);
+    }
     setAuthToken(accessToken);
     setUser(userData);
     return userData;
@@ -50,8 +53,11 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (email, password, name, company) => {
     const response = await authApi.post("/auth/register", { email, password, name, company });
-    const { accessToken, user: userData } = response.data;
+    const { accessToken, refreshToken, user: userData } = response.data;
     localStorage.setItem("ardito_token", accessToken);
+    if (refreshToken) {
+      localStorage.setItem("ardito_refresh_token", refreshToken);
+    }
     setAuthToken(accessToken);
     setUser(userData);
     return userData;
@@ -59,6 +65,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     localStorage.removeItem("ardito_token");
+    localStorage.removeItem("ardito_refresh_token");
     clearAuthToken();
     setUser(null);
   };
