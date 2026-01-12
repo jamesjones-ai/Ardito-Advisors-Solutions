@@ -67,7 +67,9 @@ const GameDetailPage = () => {
         setEmotions(emotionsRes.data);
       } catch (error) {
         console.error("Failed to fetch game:", error);
-        toast.error("Failed to load game details");
+        if (error.response?.status !== 401) {
+          toast.error("Failed to load game details");
+        }
       } finally {
         setLoading(false);
       }

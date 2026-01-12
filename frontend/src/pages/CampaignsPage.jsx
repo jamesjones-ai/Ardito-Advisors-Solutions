@@ -191,7 +191,9 @@ const CampaignsPage = () => {
       setCampaigns(response.data);
     } catch (error) {
       console.error("Failed to fetch campaigns:", error);
-      toast.error("Failed to load campaigns");
+      if (error.response?.status !== 401) {
+        toast.error("Failed to load campaigns");
+      }
     } finally {
       setLoading(false);
     }
@@ -207,7 +209,9 @@ const CampaignsPage = () => {
       toast.success(`Campaign ${newStatus === "active" ? "activated" : "paused"}`);
       fetchCampaigns();
     } catch (error) {
-      toast.error("Failed to update campaign status");
+      if (error.response?.status !== 401) {
+        toast.error("Failed to update campaign status");
+      }
     }
   };
 
@@ -219,7 +223,9 @@ const CampaignsPage = () => {
       setDeleteId(null);
       fetchCampaigns();
     } catch (error) {
-      toast.error("Failed to delete campaign");
+      if (error.response?.status !== 401) {
+        toast.error("Failed to delete campaign");
+      }
     }
   };
 

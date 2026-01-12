@@ -101,7 +101,9 @@ const AnalyticsPage = () => {
         setEmotionROI(generateEmotionROI());
       } catch (error) {
         console.error("Analytics fetch error:", error);
-        toast.error("Failed to load analytics");
+        if (error.response?.status !== 401) {
+          toast.error("Failed to load analytics");
+        }
       } finally {
         setLoading(false);
       }

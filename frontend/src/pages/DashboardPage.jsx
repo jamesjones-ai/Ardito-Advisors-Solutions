@@ -193,7 +193,10 @@ const DashboardPage = () => {
         setEmotionDist(dist);
       } catch (error) {
         console.error("Dashboard fetch error:", error);
-        toast.error("Failed to load dashboard data");
+        // Don't show error toast for 401 - let the API interceptor handle session expiry
+        if (error.response?.status !== 401) {
+          toast.error("Failed to load dashboard data");
+        }
       } finally {
         setLoading(false);
       }

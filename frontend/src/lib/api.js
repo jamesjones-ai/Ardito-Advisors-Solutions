@@ -31,12 +31,12 @@ export const clearAuthToken = () => {
   delete authApi.defaults.headers.common["Authorization"];
 };
 
-// Token refresh logic
+// Token refresh handling
 let isRefreshing = false;
 let failedQueue = [];
 
 const processQueue = (error, token = null) => {
-  failedQueue.forEach(prom => {
+  failedQueue.forEach((prom) => {
     if (error) {
       prom.reject(error);
     } else {
@@ -46,53 +46,61 @@ const processQueue = (error, token = null) => {
   failedQueue = [];
 };
 
-const refreshAccessToken = async () => {
+const refreshToken = async () => {
   const refreshToken = localStorage.getItem("ardito_refresh_token");
   if (!refreshToken) {
     throw new Error("No refresh token available");
   }
 
   const response = await authApi.post("/auth/refresh", { refreshToken });
-  const { accessToken } = response.data;
+  const { accessToken, refreshToken: newRefreshToken } = response.data;
 
   localStorage.setItem("ardito_token", accessToken);
+  if (newRefreshToken) {
+    localStorage.setItem("ardito_refresh_token", newRefreshToken);
+  }
   setAuthToken(accessToken);
 
   return accessToken;
 };
 
-// Response interceptor for error handling
+// Response interceptor for automatic token refresh
 const errorInterceptor = async (error) => {
   const originalRequest = error.config;
 
   if (error.response?.status === 401 && !originalRequest._retry) {
     if (isRefreshing) {
+      // If already refreshing, queue this request
       return new Promise((resolve, reject) => {
         failedQueue.push({ resolve, reject });
-      }).then(token => {
-        originalRequest.headers['Authorization'] = 'Bearer ' + token;
-        return api(originalRequest);
-      }).catch(err => {
-        return Promise.reject(err);
-      });
+      })
+        .then((token) => {
+          originalRequest.headers["Authorization"] = `Bearer ${token}`;
+          return axios(originalRequest);
+        })
+        .catch((err) => Promise.reject(err));
     }
 
     originalRequest._retry = true;
     isRefreshing = true;
 
     try {
-      const newToken = await refreshAccessToken();
+      const newToken = await refreshToken();
       processQueue(null, newToken);
-      originalRequest.headers['Authorization'] = 'Bearer ' + newToken;
-      return api(originalRequest);
+      originalRequest.headers["Authorization"] = `Bearer ${newToken}`;
+      return axios(originalRequest);
     } catch (refreshError) {
       processQueue(refreshError, null);
+
+      // Only redirect to login if refresh fails
       localStorage.removeItem("ardito_token");
       localStorage.removeItem("ardito_refresh_token");
       clearAuthToken();
+
       if (!window.location.hash.includes("#/login")) {
         window.location.hash = "#/login";
       }
+
       return Promise.reject(refreshError);
     } finally {
       isRefreshing = false;

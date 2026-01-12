@@ -40,7 +40,7 @@ const LoginPage = () => {
         toast.success("Account created successfully!");
       }
     } catch (error) {
-      const message = error.response?.data?.detail || "Authentication failed";
+      const message = error.response?.data?.error || error.response?.data?.detail || "Authentication failed";
       toast.error(message);
     } finally {
       setLoading(false);
@@ -157,6 +157,11 @@ const LoginPage = () => {
                   {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
               </div>
+              {!isLogin && (
+                <p className="text-xs text-muted-foreground">
+                  Password must include at least one uppercase letter
+                </p>
+              )}
             </div>
 
             {isLogin && (

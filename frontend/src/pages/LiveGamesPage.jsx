@@ -211,7 +211,9 @@ const LiveGamesPage = () => {
       setGames(response.data);
     } catch (error) {
       console.error("Failed to fetch games:", error);
-      toast.error("Failed to load games");
+      if (error.response?.status !== 401) {
+        toast.error("Failed to load games");
+      }
     } finally {
       setLoading(false);
     }
