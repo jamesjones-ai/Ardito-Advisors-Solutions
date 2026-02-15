@@ -27,7 +27,6 @@ import {
   Eye,
   Timer,
   Megaphone,
-  ShieldCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -100,13 +99,6 @@ const CHANNELS = [
   { icon: Radio, name: "Broadcast", desc: "TV & streaming overlays", stat: "Real-time sync" },
 ];
 
-// Testimonials
-const TESTIMONIALS = [
-  { quote: "We've tried programmatic sports advertising before. Nothing comes close to the engagement rates we see when activating at emotional peaks. It's a game-changer.", author: "Marketing Director", company: "Fortune 500 Beverage Brand", metric: "3.2x lift in brand recall" },
-  { quote: "The ROI speaks for itself. Our Victory Discount campaign generated more revenue in one weekend than our entire Q3 digital spend.", author: "VP of Sports Marketing", company: "National QSR Chain", metric: "892% ROI on first campaign" },
-  { quote: "Finally, sponsorship that's measurable. We can show our CMO exactly which emotional moments drove the most conversions.", author: "Brand Partnerships Lead", company: "Athletic Apparel Company", metric: "47% reduction in CAC" },
-];
-
 // FAQ
 const FAQS = [
   { q: "This sounds like surveillance", a: "We only monitor public posts—the same content anyone can see on Instagram, TikTok, or X. We don't access private accounts, DMs, or any non-public information. We delete content within 24 hours and only retain anonymized emotion scores." },
@@ -115,46 +107,9 @@ const FAQS = [
   { q: "This seems expensive", a: "It's performance-based. You pay for results (20% of ad spend), not impressions. Traditional sports marketing delivers 2.1x ROI. Ardito delivers 8.5x ROI. Even at 20% activation fee, you're 4x better off." },
 ];
 
-// Trust logos (enterprise brands)
-const TRUST_LOGOS = [
-  "SEC Conference", "Big Ten", "ACC", "Pac-12", "Fortune 500 Brands", "20+ National Sponsors"
-];
-
 // Logo component
 const Logo = ({ className = "h-8" }) => (
   <img src="https://customer-assets.emergentagent.com/job_fan-pulse/artifacts/h7eqeolp_ardito_logo_offwhite.png" alt="Ardito Advisors" className={className} />
-);
-
-// Trust Marquee Component
-const TrustMarquee = () => (
-  <div className="py-12 border-y border-white/5 bg-ardito-surface/50">
-    <div className="max-w-7xl mx-auto px-6">
-      <p className="text-center text-xs font-mono uppercase tracking-[0.2em] text-gray-500 mb-8">
-        Trusted by leading athletic programs and Fortune 500 brands
-      </p>
-      <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
-        {TRUST_LOGOS.map((logo) => (
-          <div key={logo} className="text-gray-400 font-medium text-sm opacity-60 hover:opacity-100 transition-opacity">
-            {logo}
-          </div>
-        ))}
-      </div>
-      <div className="flex justify-center items-center gap-8 mt-8 pt-8 border-t border-white/5">
-        <div className="flex items-center gap-2 text-gray-500 text-xs">
-          <ShieldCheck className="h-4 w-4" />
-          <span>SOC 2 Compliant</span>
-        </div>
-        <div className="flex items-center gap-2 text-gray-500 text-xs">
-          <Shield className="h-4 w-4" />
-          <span>GDPR Ready</span>
-        </div>
-        <div className="flex items-center gap-2 text-gray-500 text-xs">
-          <Lock className="h-4 w-4" />
-          <span>Enterprise Security</span>
-        </div>
-      </div>
-    </div>
-  </div>
 );
 
 // Animated emotion ticker (refined)
@@ -444,7 +399,6 @@ const LandingPage = () => {
             <div className="hidden md:flex items-center gap-10">
               <a href="#how-it-works" className="text-sm text-gray-400 hover:text-white transition-colors">How It Works</a>
               <a href="#use-case" className="text-sm text-gray-400 hover:text-white transition-colors">Use Cases</a>
-              <a href="#results" className="text-sm text-gray-400 hover:text-white transition-colors">Results</a>
               <a href="#faq" className="text-sm text-gray-400 hover:text-white transition-colors">FAQ</a>
             </div>
 
@@ -469,7 +423,6 @@ const LandingPage = () => {
           <div className="md:hidden bg-ardito-surface border-t border-white/5 p-4 space-y-4">
             <a href="#how-it-works" className="block text-sm text-gray-400" onClick={() => setMobileMenuOpen(false)}>How It Works</a>
             <a href="#use-case" className="block text-sm text-gray-400" onClick={() => setMobileMenuOpen(false)}>Use Cases</a>
-            <a href="#results" className="block text-sm text-gray-400" onClick={() => setMobileMenuOpen(false)}>Results</a>
             <a href="#faq" className="block text-sm text-gray-400" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
             <div className="pt-4 border-t border-white/5 space-y-2">
               <Link to="/login" className="block"><Button variant="outline" className="w-full border-white/10">Client Login</Button></Link>
@@ -539,9 +492,6 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
-
-      {/* Trust Signals */}
-      <TrustMarquee />
 
       {/* Stats Row */}
       <section className="py-20 px-6 lg:px-8">
@@ -718,36 +668,6 @@ const LandingPage = () => {
         </div>
       </Section>
 
-      {/* Testimonials */}
-      <Section id="results" className="py-24 px-6 lg:px-8 bg-ardito-surface/30">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-xs font-mono uppercase tracking-[0.2em] text-blue-400 mb-4">Proven Results</p>
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-white">What Industry Leaders Say</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {TESTIMONIALS.map((t, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="rounded-2xl border border-white/5 bg-white/[0.02] p-6"
-              >
-                <Badge className="mb-4 bg-emerald-500/10 text-emerald-400 border-emerald-500/30 font-mono text-xs">{t.metric}</Badge>
-                <blockquote className="text-gray-400 mb-6 italic leading-relaxed">"{t.quote}"</blockquote>
-                <div>
-                  <p className="font-medium text-white">{t.author}</p>
-                  <p className="text-sm text-gray-500">{t.company}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
       {/* FAQ */}
       <Section id="faq" className="py-24 px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
@@ -824,7 +744,7 @@ const LandingPage = () => {
               <p className="text-sm text-gray-500">The first real-time emotion intelligence platform for sports sponsorships.</p>
             </div>
             {[
-              { title: "Platform", links: ["How It Works", "Use Cases", "Results", "Security"] },
+              { title: "Platform", links: ["How It Works", "Use Cases", "Security"] },
               { title: "Company", links: ["About", "Careers", "Blog", "Contact"] },
               { title: "Legal", links: ["Privacy Policy", "Terms of Service", "Compliance"] },
             ].map((col) => (
